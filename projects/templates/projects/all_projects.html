@@ -1,22 +1,29 @@
 {% load static %}
-<!doctype html>
-
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>The HTML5 Herald</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-</head>
-
-<body>
-  <h1> work </h1>
-  {{ projects }}
-  {% for project in projects %}
-    <img src="{% static project.image %}" alt="screen shot of project">
-    <h2>{{pproject.title}}</h2>
-    <p>{{project.description}} </p>
-    <p>{{project.technology}} </p>
-  {% endfor %}
-</body>
+    <head>
+        <meta charset="utf-8">
+        <title>Projects</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+        <h1>Projects</h1>
+        <div class="row">
+        {% for project in projects %}
+            <div class="col-md-4">
+                <div class="card mb-2">
+                    <img class="card-img-top" src="{% static project.image %}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ project.title }}</h5>
+                        <p class="card-text">{{ project.description }}</p>
+                        <a href="#"
+                        class="btn btn-primary">
+                            Read More
+                        </a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    </body>
 </html>
