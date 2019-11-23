@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 
 <html lang="en">
@@ -12,10 +13,10 @@
   <h1> work </h1>
   {{ projects }}
   {% for project in projects %}
+    <img src="{% static project.image %}" alt="screen shot of project">
     <h2>{{pproject.title}}</h2>
     <p>{{project.description}} </p>
     <p>{{project.technology}} </p>
-    <p>{{project.image}} </p>
   {% endfor %}
 </body>
 </html>
