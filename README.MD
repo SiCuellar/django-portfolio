@@ -30,7 +30,6 @@ Source .env/bin/activate
 pip install Django
 ```
 
-We can use ```pip freeze ``` to check what packages have been installed.
 
 ## Fun way to get started with Django!
 
